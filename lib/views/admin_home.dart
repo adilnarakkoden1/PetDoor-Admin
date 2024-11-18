@@ -20,9 +20,9 @@ class _AdminHomeState extends State<AdminHome> {
   int _currentIndex = 0;
 
   final List<Widget> _pages = [
-    AdminHome(),
-    ViewCategories(),
-    OrdersPage(),
+    const AdminHome(),
+    const ViewCategories(),
+    const OrdersPage(),
   ];
 
   void _onItemTapped(int index) {
@@ -31,13 +31,13 @@ class _AdminHomeState extends State<AdminHome> {
     });
     if (index == 1) {
       Navigator.push(
-          context, MaterialPageRoute(builder: (context) => ViewCategories()));
+          context, MaterialPageRoute(builder: (context) => const ViewCategories()));
     } else if (index == 0) {
       Navigator.push(
-          context, MaterialPageRoute(builder: (context) => AdminHome()));
+          context, MaterialPageRoute(builder: (context) => const AdminHome()));
     } else {
       Navigator.push(
-          context, MaterialPageRoute(builder: (context) => OrdersPage()));
+          context, MaterialPageRoute(builder: (context) => const OrdersPage()));
     }
   }
 
@@ -97,7 +97,7 @@ class _AdminHomeState extends State<AdminHome> {
                     showDialog(
                         context: context,
                         builder: (context) => AlertDialog(
-                              title: Text("Choose what you want"),
+                              title: Text("Choose your option"),
                               actions: [
                                 TextButton(
                                     onPressed: () {
@@ -118,7 +118,7 @@ class _AdminHomeState extends State<AdminHome> {
                                                     Navigator.pop(context);
                                                   }));
                                     },
-                                    child: Text("Delete Product")),
+                                    child: const Text("Delete Product")),
                               ],
                             ));
                   },
@@ -139,14 +139,14 @@ class _AdminHomeState extends State<AdminHome> {
                                 fit: BoxFit.cover,
                               ),
                             ),
-                            SizedBox(width: 16),
+                            const SizedBox(width: 16),
                             Expanded(
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
                                     products[index].name,
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                         fontSize: 18,
                                         fontWeight: FontWeight.bold),
                                     maxLines: 2,
@@ -159,14 +159,14 @@ class _AdminHomeState extends State<AdminHome> {
                                     children: [
                                       Text(
                                         "₹ ${products[index].amount.toString()}",
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                           fontSize: 16,
                                           fontWeight: FontWeight.bold,
                                           color: Colors.orange,
                                         ),
                                       ),
                                       Container(
-                                        padding: EdgeInsets.all(4),
+                                        padding:const EdgeInsets.all(4),
                                         decoration: BoxDecoration(
                                           color: Theme.of(context).primaryColor,
                                           borderRadius:
@@ -216,12 +216,12 @@ class _AdminHomeState extends State<AdminHome> {
                                                               .id);
                                                       Navigator.pop(context);
                                                     },
-                                                    child: Text("Yes")),
+                                                    child: const Text("Yes")),
                                                 TextButton(
                                                     onPressed: () {
                                                       Navigator.pop(context);
                                                     },
-                                                    child: Text("No")),
+                                                    child: const Text("No")),
                                               ],
                                             ));
                                   },
@@ -243,14 +243,14 @@ class _AdminHomeState extends State<AdminHome> {
         onPressed: () {
           Navigator.pushNamed(context, "/addanimal");
         },
-        child: const Icon(Icons.add),
+        child: Icon(Icons.add),
         backgroundColor: Colors.grey,
         elevation: 6,
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
-          gradient: LinearGradient(
+          gradient: const LinearGradient(
             colors: [Colors.deepPurpleAccent, Colors.blueAccent],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
@@ -287,10 +287,7 @@ class _AdminHomeState extends State<AdminHome> {
               icon: Icon(Icons.assessment),
               label: 'Orders',
             ),
-            // BottomNavigationBarItem(
-            //   icon: Icon(Icons.volunteer_activism),
-            //   label: 'Donations',
-            // ),
+            
           ],
           type: BottomNavigationBarType.fixed,
         ),

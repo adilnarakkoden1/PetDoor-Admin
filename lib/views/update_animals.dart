@@ -19,7 +19,7 @@ class ModifyProduct extends StatefulWidget {
 class _ModifyProductState extends State<ModifyProduct> {
   late String productId = "";
   final formKey = GlobalKey<FormState>();
-  final Widget space = SizedBox(height: 16);
+  final Widget space = const SizedBox(height: 16);
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _breedController = TextEditingController();
   final TextEditingController _categoryController = TextEditingController();
@@ -120,7 +120,7 @@ class _ModifyProductState extends State<ModifyProduct> {
                         hintText: "Category",
                         labelText: "Category",
                         prefixIcon:
-                            Icon(Icons.category, color: Colors.deepPurple),
+                            const Icon(Icons.category, color: Colors.deepPurple),
                         fillColor: Colors.white,
                         filled: true,
                         border: OutlineInputBorder(

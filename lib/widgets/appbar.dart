@@ -19,7 +19,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       elevation: 0,
       flexibleSpace: Container(
         decoration: BoxDecoration(
-          gradient: LinearGradient(
+          gradient: const LinearGradient(
             colors: [Colors.deepPurpleAccent, Colors.blueAccent],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,

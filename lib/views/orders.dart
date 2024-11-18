@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:pet_door_admin/Controllers/db_service.dart';
 import 'package:pet_door_admin/models/orders_model.dart';
-import 'package:pet_door_admin/views/view_categories.dart';
 import 'package:pet_door_admin/widgets/appbar.dart';
 
 class OrdersPage extends StatefulWidget {
@@ -170,7 +169,7 @@ class _ViewOrderState extends State<ViewOrder> {
                                       ),
                                     ),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     width: 10,
                                   ),
                                   Expanded(child: Text(e.name)),
@@ -183,7 +182,7 @@ class _ViewOrderState extends State<ViewOrder> {
                               ),
                               Text(
                                 "₹${e.total_price.toString()}",
-                                style: TextStyle(
+                                style: const TextStyle(
                                     fontWeight: FontWeight.bold, fontSize: 20),
                               ),
                             ],
@@ -198,18 +197,18 @@ class _ViewOrderState extends State<ViewOrder> {
                   children: [
                     Text(
                       "Total : ₹${args.total}",
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                      style: const TextStyle(
+                          fontWeight: FontWeight.bold, fontSize: 20),
                     ),
                     Text(
                       "Status : ${args.status}",
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                      style: const TextStyle(
+                          fontWeight: FontWeight.bold, fontSize: 20),
                     ),
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 8,
               ),
               args.status == "PAID" || args.status == "ON_THE_WAY"
@@ -267,7 +266,7 @@ class _ModifyOrderState extends State<ModifyOrder> {
                 Navigator.pop(context);
                 Navigator.pop(context);
               },
-              child: Text("Order Paid by user")),
+              child: const Text("Order Paid by user")),
           TextButton(
               onPressed: () async {
                 await DbService().updateOrderStatus(
@@ -275,7 +274,7 @@ class _ModifyOrderState extends State<ModifyOrder> {
                 Navigator.pop(context);
                 Navigator.pop(context);
               },
-              child: Text("Order Shipped")),
+              child: const Text("Order Shipped")),
           TextButton(
               onPressed: () async {
                 await DbService().updateOrderStatus(
@@ -283,7 +282,7 @@ class _ModifyOrderState extends State<ModifyOrder> {
                 Navigator.pop(context);
                 Navigator.pop(context);
               },
-              child: Text("Order Delivered")),
+              child: const Text("Order Delivered")),
           TextButton(
               onPressed: () async {
                 await DbService().updateOrderStatus(
@@ -291,7 +290,7 @@ class _ModifyOrderState extends State<ModifyOrder> {
                 Navigator.pop(context);
                 Navigator.pop(context);
               },
-              child: Text("Cancel Order")),
+              child: const Text("Cancel Order")),
         ],
       ),
     );

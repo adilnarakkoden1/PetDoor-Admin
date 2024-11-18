@@ -23,7 +23,7 @@ class CustomCategory extends StatelessWidget {
         showDialog(
           context: context,
           builder: (context) => AlertDialog(
-            title: Text("Select Category:"),
+            title: const Text("Select Category:"),
             content: SingleChildScrollView(
               child: Consumer<AdminProvider>(
                 builder: (context, value, child) {
@@ -43,7 +43,7 @@ class CustomCategory extends StatelessWidget {
                         },
                         child: Text(
                           category["name"],
-                          style: TextStyle(
+                          style: const TextStyle(
                             color: Colors.deepPurple,
                             fontSize: 16,
                             fontWeight: FontWeight.w500,

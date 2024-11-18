@@ -28,7 +28,7 @@ class _AddAnimalsState extends State<AddAnimals> {
   final ImagePicker picker = ImagePicker();
   late XFile? image = null;
 
-  final Widget space = SizedBox(height: 16);
+  final Widget space = const SizedBox(height: 16);
   final formKey = GlobalKey<FormState>();
   late String productId = "";
   String? _imageError;
@@ -73,7 +73,7 @@ class _AddAnimalsState extends State<AddAnimals> {
     }
 
     return Scaffold(
-      appBar: CustomAppBar(
+      appBar: const CustomAppBar(
         title: 'Animal Management',
       ),
       body: Form(
@@ -133,7 +133,7 @@ class _AddAnimalsState extends State<AddAnimals> {
                   decoration: InputDecoration(
                     hintText: "Category",
                     labelText: "Category",
-                    prefixIcon: Icon(Icons.category, color: Colors.deepPurple),
+                    prefixIcon: const Icon(Icons.category, color: Colors.deepPurple),
                     fillColor: Colors.white,
                     filled: true,
                     border: OutlineInputBorder(
@@ -268,7 +268,7 @@ class _AddAnimalsState extends State<AddAnimals> {
       value: selectedGender,
       decoration: InputDecoration(
         labelText: 'Gender',
-        prefixIcon: Icon(Icons.male, color: Colors.deepPurple),
+        prefixIcon: const Icon(Icons.male, color: Colors.deepPurple),
         filled: true,
         fillColor: Colors.white,
         border: OutlineInputBorder(

@@ -40,7 +40,7 @@ class _CategoriesPageState extends State<ViewCategories> {
             itemCount: categories.length,
             itemBuilder: (context, index) {
               return Card(
-                margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                 elevation: 4,
                 child: ListTile(
                   leading: Container(
@@ -204,7 +204,7 @@ class _ModifyCategoryState extends State<ModifyCategory> {
       title: Center(
         child: Text(
           widget.isUpdating ? "Update Category" : "Add Category",
-          style: TextStyle(fontWeight: FontWeight.w700),
+          style: const TextStyle(fontWeight: FontWeight.w700),
         ),
       ),
       content: SingleChildScrollView(
@@ -214,7 +214,7 @@ class _ModifyCategoryState extends State<ModifyCategory> {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisSize: MainAxisSize.min,
             children: [
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               TextFormField(
                 controller: categoryController,
                 validator: (v) => v!.isEmpty ? "This can't be empty." : null,
@@ -229,7 +229,7 @@ class _ModifyCategoryState extends State<ModifyCategory> {
                   ),
                 ),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               if (image == null && imageController.text.isNotEmpty)
                 Container(
                   margin: EdgeInsets.all(20),
@@ -249,7 +249,7 @@ class _ModifyCategoryState extends State<ModifyCategory> {
                 )
               else if (image != null)
                 Container(
-                  margin: EdgeInsets.all(20),
+                  margin: const EdgeInsets.all(20),
                   height: 200,
                   width: double.infinity,
                   decoration: BoxDecoration(
@@ -275,7 +275,7 @@ class _ModifyCategoryState extends State<ModifyCategory> {
                   ),
                 ),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               TextFormField(
                 controller: imageController,
                 validator: (v) => v!.isEmpty ? "This can't be empty." : null,
@@ -297,7 +297,7 @@ class _ModifyCategoryState extends State<ModifyCategory> {
       actions: [
         TextButton(
           onPressed: () => Navigator.pop(context),
-          child: Text("Cancel"),
+          child: const Text("Cancel"),
         ),
         TextButton(
             onPressed: () async {
@@ -345,16 +345,17 @@ class AdditionalConfirm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title: Text('Confirmation', style: TextStyle(color: Colors.deepPurple)),
+      title: const Text('Confirmation',
+          style: TextStyle(color: Colors.deepPurple)),
       content: Text(contentText),
       actions: [
         TextButton(
           onPressed: onNo,
-          child: Text('No'),
+          child: const Text('No'),
         ),
         TextButton(
           onPressed: onYes,
-          child: Text('Yes'),
+          child: const Text('Yes'),
         ),
       ],
     );
