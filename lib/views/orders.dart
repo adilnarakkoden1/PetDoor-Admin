@@ -109,7 +109,7 @@ class _ViewOrderState extends State<ViewOrder> {
     String formattedDate = DateFormat('dd-MMM-yyyy  HH:mm a')
         .format(DateTime.fromMillisecondsSinceEpoch(args.created_at));
     return Scaffold(
-      appBar: CustomAppBar(
+      appBar: const CustomAppBar(
         title: 'Order Summary',
       ),
       body: SingleChildScrollView(
