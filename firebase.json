@@ -1,1 +1,30 @@
-{"flutter":{"platforms":{"dart":{"lib/firebase_options.dart":{"projectId":"petdoor-a716a","configurations":{"android":"1:120223259659:android:0045ac8a5d31075b7b3b0e","web":"1:120223259659:web:e43e850ac58175967b3b0e"}}},"android":{"default":{"projectId":"petdoor-a716a","appId":"1:120223259659:android:0045ac8a5d31075b7b3b0e","fileOutput":"android/app/google-services.json"}}}}}
+{
+  "flutter": {
+    "platforms": {
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "petdoor-a716a",
+          "configurations": {
+            "android": "1:120223259659:android:0045ac8a5d31075b7b3b0e",
+            "web": "1:120223259659:web:e43e850ac58175967b3b0e"
+          }
+        }
+      },
+      "android": {
+        "default": {
+          "projectId": "petdoor-a716a",
+          "appId": "1:120223259659:android:0045ac8a5d31075b7b3b0e",
+          "fileOutput": "android/app/google-services.json"
+        }
+      }
+    }
+  },
+  "hosting": {
+    "public": "build/web",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:pet_door_admin/Controllers/authentication_service.dart';
 import 'package:pet_door_admin/Controllers/db_service.dart';
@@ -30,8 +31,8 @@ class _AdminHomeState extends State<AdminHome> {
       _currentIndex = index;
     });
     if (index == 1) {
-      Navigator.push(
-          context, MaterialPageRoute(builder: (context) => const ViewCategories()));
+      Navigator.push(context,
+          MaterialPageRoute(builder: (context) => const ViewCategories()));
     } else if (index == 0) {
       Navigator.push(
           context, MaterialPageRoute(builder: (context) => const AdminHome()));
@@ -137,6 +138,10 @@ class _AdminHomeState extends State<AdminHome> {
                                 height: 80,
                                 width: 80,
                                 fit: BoxFit.cover,
+                                errorBuilder: (context, error, stackTrace) {
+                                  log(error.toString());
+                                  return Icon(Icons.error);
+                                },
                               ),
                             ),
                             const SizedBox(width: 16),
@@ -166,7 +171,7 @@ class _AdminHomeState extends State<AdminHome> {
                                         ),
                                       ),
                                       Container(
-                                        padding:const EdgeInsets.all(4),
+                                        padding: const EdgeInsets.all(4),
                                         decoration: BoxDecoration(
                                           color: Theme.of(context).primaryColor,
                                           borderRadius:
@@ -287,7 +292,6 @@ class _AdminHomeState extends State<AdminHome> {
               icon: Icon(Icons.assessment),
               label: 'Orders',
             ),
-            
           ],
           type: BottomNavigationBarType.fixed,
         ),
